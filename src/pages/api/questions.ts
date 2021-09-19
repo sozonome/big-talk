@@ -26,10 +26,12 @@ export const fetchQuestions = async () => {
           title:
             (pageResult.properties.Title as TitlePropertyValue).title[0]
               .plain_text ?? "",
-          type: (pageResult.properties.Tags as SelectPropertyValue).select
-            ?.name,
-          color: (pageResult.properties.Color as SelectPropertyValue).select
-            ?.name,
+          type:
+            (pageResult.properties.Tags as SelectPropertyValue).select?.name ??
+            null,
+          color:
+            (pageResult.properties.Color as SelectPropertyValue).select?.name ??
+            null,
         }))
       );
     });

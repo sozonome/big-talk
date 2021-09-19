@@ -9,15 +9,17 @@ type QuestionCardProps = {
 const QuestionCard = ({ question }: QuestionCardProps) => {
   const { title, color } = question;
 
+  const qColor = color ?? "gray";
+
   return (
     <Stack
       borderRadius={[16, 24]}
       borderWidth={2}
-      borderColor={`${color}.200`}
-      backgroundColor={`${color}.100`}
+      borderColor={`${qColor}.200`}
+      backgroundColor={`${qColor}.100`}
       padding={6}
     >
-      <Text fontWeight="black" fontSize="2xl" color={`${color}.600`}>
+      <Text fontWeight="black" fontSize="2xl" color={`${qColor}.600`}>
         {title}
       </Text>
     </Stack>
