@@ -1,19 +1,35 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
 import Link from "next/link";
 
 import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   return (
-    <Flex as="header" width="full" align="center">
-      <Heading as="h1" size="md">
-        <Link href="/">Big Talk</Link>
-      </Heading>
+    <Box
+      width="full"
+      position="sticky"
+      top="0"
+      zIndex="2"
+      backdropFilter="blur(35px)"
+    >
+      <Flex
+        as="header"
+        margin="0 auto"
+        maxWidth={800}
+        padding={8}
+        align="center"
+      >
+        <Heading as="h1" size="md">
+          <Link href="/">Big Talk</Link>
+        </Heading>
 
-      <Box marginLeft="auto">
-        <ThemeToggle />
-      </Box>
-    </Flex>
+        <Spacer />
+
+        <Box>
+          <ThemeToggle />
+        </Box>
+      </Flex>
+    </Box>
   );
 };
 

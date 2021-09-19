@@ -23,15 +23,15 @@ const Home = ({ questions }: HomeProps) => {
   };
 
   return (
-    <Stack mb={8} w="full" spacing={6}>
+    <Stack mb={8} w="full" height="full" spacing={6}>
+      {show && <QuestionCard question={questions[index]} />}
+
       <Button
         onClick={handleGenerate}
         colorScheme={`${questions[index].color}`}
       >
         Surprise Me
       </Button>
-
-      {show && <QuestionCard question={questions[index]} />}
     </Stack>
   );
 };
