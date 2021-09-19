@@ -16,9 +16,8 @@ import * as React from "react";
 
 import createEmotionCache from "styles/createEmotionCache";
 
-const APP_NAME = "nextchakra-starter";
-const APP_DESCRIPTION =
-  "Next.js app template with Chakra-UI, TypeScript, and PWA configured";
+const APP_NAME = "Big Talk";
+const APP_DESCRIPTION = "Big Talk Questions";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {

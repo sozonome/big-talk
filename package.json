@@ -1,5 +1,5 @@
 {
-  "name": "nextchakra-starter",
+  "name": "big-talk",
   "version": "0.1.0",
   "private": true,
   "author": "sozonome",
@@ -23,6 +23,8 @@
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "@fontsource/lexend": "^4.5.1",
+    "@fontsource/recursive": "^4.5.0",
+    "@notionhq/client": "^0.3.2",
     "framer-motion": "^4.1.17",
     "next": "^11.1.2",
     "next-pwa": "^5.3.1",
