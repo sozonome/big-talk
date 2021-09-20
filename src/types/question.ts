@@ -5,3 +5,8 @@ export type BigTalkQuestion = {
 };
 
 export default BigTalkQuestion;
+
+export type FetchQuestionsResponse = {
+  questions: Array<BigTalkQuestion>;
+  lastUpdated: string;
+};

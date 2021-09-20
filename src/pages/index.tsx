@@ -37,7 +37,7 @@ const Home = ({ questions }: HomeProps) => {
 };
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  const questions: Array<BigTalkQuestion> = await fetchQuestions();
+  const { questions } = await fetchQuestions();
 
   return {
     props: {

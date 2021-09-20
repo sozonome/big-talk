@@ -6,7 +6,7 @@ import {
 import { NextApiRequest, NextApiResponse } from "next";
 
 import { NOTION_DATABASE_ID, NOTION_KEY } from "constants/notion";
-import { BigTalkQuestion } from "types/question";
+import { FetchQuestionsResponse } from "types/question";
 
 // https://stackoverflow.com/a/65760948
 export const fetchQuestions = async () => {
@@ -14,14 +14,17 @@ export const fetchQuestions = async () => {
     auth: NOTION_KEY,
   });
 
-  const result: Array<BigTalkQuestion> = [];
+  const result: FetchQuestionsResponse = {
+    questions: [],
+    lastUpdated: "",
+  };
 
   await notion.databases
     .query({
       database_id: NOTION_DATABASE_ID,
     })
     .then((dbRes) => {
-      result.push(
+      result.questions.push(
         ...dbRes.results.map((pageResult) => ({
           title:
             (pageResult.properties.Title as TitlePropertyValue).title[0]
@@ -34,6 +37,11 @@ export const fetchQuestions = async () => {
             null,
         }))
       );
+    });
+  await notion.databases
+    .retrieve({ database_id: NOTION_DATABASE_ID })
+    .then((retDbRes) => {
+      result.lastUpdated = retDbRes.last_edited_time;
     });
 
   return result;
