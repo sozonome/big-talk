@@ -4,56 +4,56 @@
   "private": true,
   "author": "sozonome",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "eslint src --fix && yarn format",
+    "lint:fix": "eslint src --fix && pnpm format",
+    "type-check": "tsc --noEmit",
+    "check:turbo": "npx turbo lint type-check",
     "format": "prettier --write src",
-    "up-latest": "yarn upgrade-interactive --latest",
+    "up-interactive": "pnpm up -i",
+    "up-latest": "pnpm up-interactive -L",
     "release": "standard-version",
     "push-release": "git push --follow-tags origin main",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.6.7",
+    "@chakra-ui/react": "^2.8.1",
     "@emotion/cache": "^11.4.0",
     "@emotion/react": "^11.4.1",
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.3.0",
-    "@fontsource/lexend": "^4.5.1",
-    "@fontsource/recursive": "^4.5.0",
-    "@notionhq/client": "^0.3.2",
-    "framer-motion": "^4.1.17",
-    "next": "^11.1.2",
+    "@fontsource/lexend": "^5.0.11",
+    "@fontsource/recursive": "^5.0.8",
+    "@notionhq/client": "^2.2.13",
+    "framer-motion": "^10.16.4",
+    "next": "^13.4.19",
     "next-pwa": "^5.3.1",
-    "next-seo": "^4.26.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "next-seo": "^6.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.2.0"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^13.1.0",
-    "@types/react": "^17.0.20",
-    "commitlint": "^13.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-next": "^11.1.2",
-    "eslint-config-sznm": "^0.1.7",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
-    "next-sitemap": "^1.6.164",
-    "prettier": "^2.3.2",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@types/react": "^18.2.21",
+    "commitlint": "^17.7.1",
+    "eslint": "^8.49.0",
+    "eslint-config-next": "^13.4.19",
+    "eslint-config-sznm": "^2.0.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "next-sitemap": "^4.2.3",
+    "prettier": "^3.0.3",
     "standard-version": "^9.3.1",
-    "typescript": "^4.4.2"
+    "typescript": "^5.2.2"
   },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint --max-warnings=0",
-      "prettier --write"
-    ],
-    "src/**/*.{json,css,scss,md}": [
-      "prettier --write"
-    ]
-  }
+  "engines": {
+    "node": ">=16.8.x",
+    "pnpm": ">=8"
+  },
+  "packageManager": "pnpm@8.1.0"
 }

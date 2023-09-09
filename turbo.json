@@ -1,0 +1,16 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "outputs": [".next/**", "!.next/cache/**", "public/**"],
+      "env": ["NOTION_KEY", "NOTION_DATABASE_ID"]
+    },
+    "lint": {
+      "outputs": [],
+      "inputs": [".eslintrc.*", "src/**"]
+    },
+    "type-check": {
+      "outputs": ["*.tsbuildinfo"]
+    }
+  }
+}
