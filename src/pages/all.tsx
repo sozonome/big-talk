@@ -1,8 +1,8 @@
 import { Stack, Text } from "@chakra-ui/react";
-import { GetStaticProps } from "next";
+import type { GetStaticProps } from "next";
 
 import QuestionCard from "components/home/QuestionCard";
-import { BigTalkQuestion } from "types/question";
+import type { BigTalkQuestion } from "types/question";
 import { dateFormatLong } from "utils/dateFormat";
 
 import { fetchQuestions } from "./api/questions";

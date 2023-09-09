@@ -1,9 +1,9 @@
 import { Button, Stack } from "@chakra-ui/react";
-import { GetStaticProps } from "next";
+import type { GetStaticProps } from "next";
 import { useState } from "react";
 
 import QuestionCard from "components/home/QuestionCard";
-import { BigTalkQuestion } from "types/question";
+import type { BigTalkQuestion } from "types/question";
 
 import { fetchQuestions } from "./api/questions";
 

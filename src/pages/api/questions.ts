@@ -1,12 +1,12 @@
 import { Client } from "@notionhq/client";
-import {
+import type {
   SelectPropertyValue,
   TitlePropertyValue,
 } from "@notionhq/client/build/src/api-types";
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 import { NOTION_DATABASE_ID, NOTION_KEY } from "constants/notion";
-import { FetchQuestionsResponse } from "types/question";
+import type { FetchQuestionsResponse } from "types/question";
 
 // https://stackoverflow.com/a/65760948
 export const fetchQuestions = async () => {

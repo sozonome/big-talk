@@ -1,6 +1,6 @@
 import { Stack, Text } from "@chakra-ui/react";
 
-import { BigTalkQuestion } from "types/question";
+import type { BigTalkQuestion } from "types/question";
 
 type QuestionCardProps = {
   question: BigTalkQuestion;
